@@ -85,16 +85,17 @@
 
 /* ─── SCROLL FADE-IN ANIMATIONS ─────────────── */
 (function () {
-  // Add fade-in class to animatable elements
-  const targets = document.querySelectorAll(
+  // Add fade-in class to animatable elements (main site)
+  const autoTargets = document.querySelectorAll(
     '.research-card, .pub-item, .timeline-item, .reading-item, .contact-item, .sidebar-card, .pub-featured, .thesis-block, .pub-metrics, .hero-content > *'
   );
-
-  targets.forEach((el, i) => {
+  autoTargets.forEach((el, i) => {
     el.classList.add('fade-in');
-    // Stagger children slightly
     el.style.transitionDelay = `${Math.min(i * 0.04, 0.3)}s`;
   });
+
+  // Also observe any element already marked .fade-in in HTML (e.g. personal page)
+  const allFadeTargets = document.querySelectorAll('.fade-in');
 
   const observer = new IntersectionObserver(
     (entries) => {
@@ -105,10 +106,17 @@
         }
       });
     },
-    { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
+    { threshold: 0.05, rootMargin: '0px 0px -20px 0px' }
   );
 
-  targets.forEach(el => observer.observe(el));
+  allFadeTargets.forEach(el => observer.observe(el));
+
+  // Fallback: if IntersectionObserver never fires (e.g. pre-render), reveal all after 800ms
+  setTimeout(() => {
+    document.querySelectorAll('.fade-in:not(.visible)').forEach(el => {
+      el.classList.add('visible');
+    });
+  }, 800);
 })();
 
 /* ─── ACTIVE NAV HIGHLIGHTING ───────────────── */
