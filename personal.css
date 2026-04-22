@@ -1,0 +1,349 @@
+/* ═══════════════════════════════════════════════
+   PERSONAL PAGE — Beyond the Lab
+   Inherits all tokens from style.css
+   Adds: editorial hero, photo mosaic, interests grid
+═══════════════════════════════════════════════ */
+
+/* ─── PAGE HERO ───────────────────────────────── */
+.personal-hero {
+  padding-block: clamp(var(--space-12), 7vw, var(--space-20));
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle warm bloom behind the hero */
+.personal-hero::after {
+  content: '';
+  position: absolute;
+  top: -20%; right: 0;
+  width: 50vw; max-width: 600px;
+  height: 100%;
+  background: radial-gradient(ellipse at 80% 50%,
+    color-mix(in oklab, var(--color-primary) 9%, transparent) 0%,
+    transparent 65%);
+  pointer-events: none;
+}
+
+.personal-hero__inner {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: clamp(var(--space-10), 5vw, var(--space-16));
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.personal-hero__text {
+  min-width: 0;
+}
+
+.personal-hero__title {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 400;
+  letter-spacing: -.025em;
+  line-height: 1.05;
+  color: var(--color-text);
+  margin-bottom: var(--space-6);
+}
+.personal-hero__title em {
+  font-style: italic;
+  color: var(--color-primary);
+  font-weight: 300;
+}
+
+.personal-hero__intro {
+  font-size: clamp(1rem, .9rem + .5vw, 1.18rem);
+  color: var(--color-text-muted);
+  max-width: 52ch;
+  line-height: 1.78;
+}
+
+.personal-hero__portrait {
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-border);
+  position: relative;
+}
+.personal-hero__portrait::before {
+  content: '';
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(
+    to bottom,
+    transparent 55%,
+    color-mix(in oklab, var(--color-ink) 30%, transparent)
+  );
+  pointer-events: none;
+}
+.personal-hero__portrait img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+  display: block;
+}
+
+/* ─── EDITORIAL INTRO ─────────────────────────── */
+.personal-intro {
+  padding-block: clamp(var(--space-10), 5vw, var(--space-16));
+}
+.personal-intro__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(var(--space-8), 5vw, var(--space-16));
+  border-top: 1px solid var(--color-divider);
+  padding-top: var(--space-8);
+}
+.personal-intro__col p {
+  color: var(--color-text-muted);
+  line-height: 1.85;
+  margin-bottom: var(--space-5);
+  font-size: clamp(.95rem, .9rem + .25vw, 1.05rem);
+}
+.personal-intro__col p:last-child { margin-bottom: 0; }
+
+/* ─── PHOTO MOSAIC ────────────────────────────── */
+.personal-mosaic {
+  padding-block: 0 clamp(var(--space-10), 5vw, var(--space-16));
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.mosaic-row {
+  display: grid;
+  gap: var(--space-4);
+}
+
+/* Row layout variants */
+.mosaic-row--two-tall {
+  grid-template-columns: 1fr 1fr;
+}
+.mosaic-row--three {
+  grid-template-columns: repeat(3, 1fr);
+}
+.mosaic-row--wide-narrow {
+  grid-template-columns: 2fr 1fr;
+}
+
+/* Individual mosaic items */
+.mosaic-item {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  background: var(--color-surface-offset);
+  transition: box-shadow var(--t-slow), transform var(--t-slow);
+}
+.mosaic-item:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-3px);
+}
+
+.mosaic-item__img {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Height variants */
+.mosaic-item--tall .mosaic-item__img {
+  height: clamp(340px, 42vw, 540px);
+}
+.mosaic-item--wide .mosaic-item__img {
+  height: clamp(260px, 30vw, 380px);
+}
+.mosaic-row--three .mosaic-item .mosaic-item__img {
+  height: clamp(240px, 26vw, 340px);
+}
+.mosaic-row--wide-narrow .mosaic-item:not(.mosaic-item--wide) .mosaic-item__img {
+  height: clamp(260px, 30vw, 380px);
+}
+
+.mosaic-item__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform var(--t-slow), filter var(--t-slow);
+  filter: saturate(0.92);
+}
+.mosaic-item:hover .mosaic-item__img img {
+  transform: scale(1.04);
+  filter: saturate(1.05);
+}
+
+/* Gradient overlay so caption reads on any photo */
+.mosaic-item__img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    color-mix(in oklab, var(--color-ink) 55%, transparent) 100%
+  );
+  pointer-events: none;
+}
+
+/* Caption — overlaid on the photo */
+.mosaic-caption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: var(--space-5) var(--space-5) var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  z-index: 2;
+}
+.mosaic-caption__tag {
+  font-family: var(--font-mono);
+  font-size: .6rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: var(--color-primary);
+  background: color-mix(in oklab, var(--color-ink) 50%, transparent);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-sm);
+  align-self: flex-start;
+  border: 1px solid color-mix(in oklab, var(--color-primary) 30%, transparent);
+}
+.mosaic-caption__text {
+  font-family: var(--font-display);
+  font-size: clamp(.9rem, .8rem + .4vw, 1.05rem);
+  font-style: italic;
+  font-weight: 400;
+  color: rgba(249, 246, 239, 0.92);
+  line-height: 1.35;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.35);
+}
+
+/* ─── INTERESTS GRID ──────────────────────────── */
+.personal-interests {
+  /* Uses section--alt from main CSS */
+}
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+  margin-top: var(--space-6);
+}
+
+.interest-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow var(--t), transform var(--t), border-color var(--t);
+}
+.interest-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, var(--color-primary), transparent);
+  opacity: 0;
+  transition: opacity var(--t-slow);
+}
+.interest-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+  border-color: color-mix(in oklab, var(--color-primary) 28%, var(--color-border));
+}
+.interest-card:hover::before { opacity: 1; }
+
+.interest-card__icon {
+  width: 40px; height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--color-primary-highlight);
+  border-radius: var(--radius-md);
+  color: var(--color-primary);
+  margin-bottom: var(--space-4);
+}
+.interest-card__icon svg {
+  width: 20px; height: 20px;
+  display: block;
+}
+.interest-card h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+  line-height: 1.2;
+}
+.interest-card p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.75;
+}
+
+/* ─── BACK LINK ───────────────────────────────── */
+.personal-back {
+  padding-block: var(--space-10) var(--space-12);
+}
+.personal-back__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: .7rem;
+  font-weight: 500;
+  letter-spacing: .06em;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  padding: var(--space-2) var(--space-5);
+  transition: all var(--t);
+  text-decoration: none;
+  background: var(--color-surface);
+}
+.personal-back__link:hover {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+  background: var(--color-primary-highlight);
+  transform: translateX(-3px);
+}
+
+/* ─── RESPONSIVE ──────────────────────────────── */
+@media(max-width: 1024px) {
+  .interests-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media(max-width: 900px) {
+  .personal-hero__inner {
+    grid-template-columns: 1fr;
+  }
+  .personal-hero__portrait {
+    max-width: 340px;
+    aspect-ratio: 4/3;
+    margin-inline: auto;
+  }
+  .personal-intro__grid {
+    grid-template-columns: 1fr;
+  }
+  .mosaic-row--two-tall {
+    grid-template-columns: 1fr;
+  }
+  .mosaic-row--three {
+    grid-template-columns: 1fr 1fr;
+  }
+  .mosaic-row--wide-narrow {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media(max-width: 600px) {
+  .mosaic-row--three {
+    grid-template-columns: 1fr;
+  }
+  .interests-grid { grid-template-columns: 1fr; }
+  .mosaic-item--tall .mosaic-item__img { height: 320px; }
+  .mosaic-row--three .mosaic-item .mosaic-item__img { height: 280px; }
+}

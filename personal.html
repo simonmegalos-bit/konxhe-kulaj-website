@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beyond the Lab — Dr. Konxhe Kulaj</title>
+  <meta name="description" content="A personal glimpse into the life of Dr. Konxhe Kulaj — running, hiking, travelling, skiing, and life in Amsterdam." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=switzer@300,400,450,500,600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="personal.css" />
+</head>
+<body>
+
+  <!-- NAV — identical to main site -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo" aria-label="Dr. Konxhe Kulaj — home">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+          <rect x="1.5" y="1.5" width="27" height="27" rx="2" stroke="currentColor" stroke-width="1.2"/>
+          <text x="15" y="21" text-anchor="middle" font-family="Cormorant Garamond,Georgia,serif" font-size="14" font-weight="500" fill="currentColor">K</text>
+        </svg>
+        <span class="logo-text">Dr. Konxhe Kulaj</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul role="list">
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#research">Research</a></li>
+          <li><a href="index.html#publications">Publications</a></li>
+          <li><a href="index.html#experience">Experience</a></li>
+          <li><a href="personal.html" class="active">Personal</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav" id="menu-btn">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobile-nav" hidden>
+      <ul role="list">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#research">Research</a></li>
+        <li><a href="index.html#publications">Publications</a></li>
+        <li><a href="index.html#experience">Experience</a></li>
+        <li><a href="personal.html">Personal</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- PAGE HERO -->
+    <section class="personal-hero">
+      <div class="personal-hero__inner wide-container">
+        <div class="personal-hero__text">
+          <p class="section-label">Beyond the Lab</p>
+          <h1 class="personal-hero__title">Life Outside<br><em>the Pipette</em></h1>
+          <p class="personal-hero__intro">Science is what I do — but it's not all of who I am. Here's the rest: the trails, the slopes, the canals, and the people who make it worthwhile.</p>
+        </div>
+        <!-- Hero portrait — the relaxed sofa shot -->
+        <div class="personal-hero__portrait fade-in">
+          <img src="personal-sofa.jpg" alt="Konxhe relaxing on a sofa" loading="eager" />
+        </div>
+      </div>
+    </section>
+
+    <!-- EDITORIAL INTRO — 2 col text -->
+    <section class="personal-intro wide-container">
+      <div class="personal-intro__grid">
+        <div class="personal-intro__col fade-in">
+          <p>Growing up between Greece and Albania, then studying across Germany and the Netherlands, movement has always been part of my life — both the literal kind and the geographic kind. I've lived in Munich for six years and now call Amsterdam home.</p>
+          <p>Outside the lab I run, ski, hike, and travel as often as I can. There's something about physical effort in a beautiful landscape that gives the mind exactly the reset it needs.</p>
+        </div>
+        <div class="personal-intro__col fade-in">
+          <p>Amsterdam in particular has a way of making everyday life feel like an adventure — whether it's the first snowfall on the canals, a terrace beer in the golden hour, or a spontaneous weekend trip somewhere with good cobblestones and better ice cream.</p>
+          <p>This page exists because science is a human endeavour. These photos are a small window into the human behind the research.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHOTO MOSAIC -->
+    <section class="personal-mosaic wide-container">
+
+      <!-- Row 1: Running (tall) + Canal in snow (tall) -->
+      <div class="mosaic-row mosaic-row--two-tall">
+        <figure class="mosaic-item mosaic-item--tall fade-in">
+          <div class="mosaic-item__img">
+            <img src="personal-running.jpg" alt="Konxhe running a road race through a Dutch city, arms wide open" loading="lazy" />
+          </div>
+          <figcaption class="mosaic-caption">
+            <span class="mosaic-caption__tag">Running</span>
+            <span class="mosaic-caption__text">Race day — arms wide, nothing left to lose</span>
+          </figcaption>
+        </figure>
+        <figure class="mosaic-item mosaic-item--tall fade-in">
+          <div class="mosaic-item__img">
+            <img src="personal-canal.jpg" alt="Konxhe on a snow-covered Amsterdam canal bridge in winter" loading="lazy" />
+          </div>
+          <figcaption class="mosaic-caption">
+            <span class="mosaic-caption__tag">Amsterdam</span>
+            <span class="mosaic-caption__text">The city in its rarest form — a white Amsterdam morning</span>
+          </figcaption>
+        </figure>
+      </div>
+
+      <!-- Row 2: Sofa portrait (wide) removed; Hike (portrait) + Skiing (portrait) + Amsterdam terrace (portrait) -->
+      <div class="mosaic-row mosaic-row--three">
+        <figure class="mosaic-item fade-in">
+          <div class="mosaic-item__img">
+            <img src="personal-hike.jpg" alt="Konxhe on a wooden bridge over a rushing stream in an autumn forest" loading="lazy" />
+          </div>
+          <figcaption class="mosaic-caption">
+            <span class="mosaic-caption__tag">Hiking</span>
+            <span class="mosaic-caption__text">Somewhere in the Ardennes — water always wins</span>
+          </figcaption>
+        </figure>
+        <figure class="mosaic-item fade-in">
+          <div class="mosaic-item__img">
+            <img src="personal-skiing.jpg" alt="Konxhe on a ski slope on a sunny winter day" loading="lazy" />
+          </div>
+          <figcaption class="mosaic-caption">
+            <span class="mosaic-caption__tag">Skiing</span>
+            <span class="mosaic-caption__text">Perfect snow, blue sky — the only prescription that works</span>
+          </figcaption>
+        </figure>
+        <figure class="mosaic-item fade-in">
+          <div class="mosaic-item__img">
+            <img src="personal-amsterdam.jpg" alt="Konxhe at a terrace café in Amsterdam with a beer in the foreground" loading="lazy" />
+          </div>
+          <figcaption class="mosaic-caption">
+            <span class="mosaic-caption__tag">Amsterdam</span>
+            <span class="mosaic-caption__text">Golden hour terrace — the Netherlands at its best</span>
+          </figcaption>
+        </figure>
+      </div>
+
+      <!-- Row 3: Aachen travel (wide landscape) + Friends (square) -->
+      <div class="mosaic-row mosaic-row--wide-narrow">
+        <figure class="mosaic-item mosaic-item--wide fade-in">
+          <div class="mosaic-item__img">
+            <img src="personal-travel-aachen.jpg" alt="Konxhe sitting on the steps of Aachen Cathedral with an ice cream, peace sign" loading="lazy" />
+          </div>
+          <figcaption class="mosaic-caption">
+            <span class="mosaic-caption__tag">Travel</span>
+            <span class="mosaic-caption__text">Aachen Cathedral — history tastes better with gelato</span>
+          </figcaption>
+        </figure>
+        <figure class="mosaic-item fade-in">
+          <div class="mosaic-item__img">
+            <img src="personal-friends.jpg" alt="Konxhe with a group of friends laughing together at a social event" loading="lazy" />
+          </div>
+          <figcaption class="mosaic-caption">
+            <span class="mosaic-caption__tag">People</span>
+            <span class="mosaic-caption__text">The ones who make a new city feel like home</span>
+          </figcaption>
+        </figure>
+      </div>
+
+    </section>
+
+    <!-- INTERESTS STRIP -->
+    <section class="personal-interests section section--alt">
+      <div class="wide-container">
+        <div class="section-label">Things I Care About</div>
+        <div class="interests-grid">
+          <div class="interest-card fade-in">
+            <div class="interest-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <h3>Running</h3>
+            <p>A reliable way to think through a hard problem. Race days included.</p>
+          </div>
+          <div class="interest-card fade-in">
+            <div class="interest-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M3 17l4-8 4 5 3-3 4 6"/><circle cx="18" cy="5" r="2"/></svg>
+            </div>
+            <h3>Mountains &amp; Trails</h3>
+            <p>Hiking and skiing — the outdoors as reset button and perspective machine.</p>
+          </div>
+          <div class="interest-card fade-in">
+            <div class="interest-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <h3>Travel</h3>
+            <p>Four countries of education, countless detours. Always curious what's around the next corner.</p>
+          </div>
+          <div class="interest-card fade-in">
+            <div class="interest-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3>Community</h3>
+            <p>From Munich lab mates to Amsterdam friends — good science needs good people.</p>
+          </div>
+          <div class="interest-card fade-in">
+            <div class="interest-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
+            <h3>Reading</h3>
+            <p>Papers by day, everything else by night. Fiction, biographies, and the occasional rabbit hole.</p>
+          </div>
+          <div class="interest-card fade-in">
+            <div class="interest-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3>Languages</h3>
+            <p>Greek, Albanian, English, German — and Italian somewhere in between. Each one a different way of thinking.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BACK LINK -->
+    <div class="personal-back wide-container">
+      <a href="index.html" class="personal-back__link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        Back to research profile
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner wide-container">
+      <div class="footer-left">
+        <p class="footer-name">Dr. Konxhe Kulaj, PhD</p>
+        <p class="footer-role">Postdoctoral Researcher · Cancer Center Amsterdam</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="https://scholar.google.com/citations?user=rQQsSL4AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+        <a href="https://orcid.org/0000-0002-2355-2583" target="_blank" rel="noopener">ORCID</a>
+        <a href="https://pure.amsterdamumc.nl/en/persons/konxhe-kulaj/" target="_blank" rel="noopener">Amsterdam UMC</a>
+        <a href="https://www.linkedin.com/in/konxhe-kulaj-689b61174/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="index.html">← Research Profile</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
