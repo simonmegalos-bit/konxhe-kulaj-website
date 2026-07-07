@@ -2,7 +2,7 @@
    PERSONAL PAGE — Beyond the Lab
    Inherits all tokens from style.css
    Adds: editorial hero, photo mosaic, interests grid
-═══════════════════════════════════════════════ */
+   ═══════════════════════════════════════════════ */
 
 /* ─── PAGE HERO ───────────────────────────────── */
 .personal-hero {
@@ -11,7 +11,6 @@
   overflow: hidden;
 }
 
-/* Subtle warm bloom behind the hero */
 .personal-hero::after {
   content: '';
   position: absolute;
@@ -33,9 +32,7 @@
   z-index: 1;
 }
 
-.personal-hero__text {
-  min-width: 0;
-}
+.personal-hero__text { min-width: 0; }
 
 .personal-hero__title {
   font-family: var(--font-display);
@@ -46,6 +43,7 @@
   color: var(--color-text);
   margin-bottom: var(--space-6);
 }
+
 .personal-hero__title em {
   font-style: italic;
   color: var(--color-primary);
@@ -67,6 +65,7 @@
   border: 1px solid var(--color-border);
   position: relative;
 }
+
 .personal-hero__portrait::before {
   content: '';
   position: absolute; inset: 0; z-index: 1;
@@ -77,6 +76,7 @@
   );
   pointer-events: none;
 }
+
 .personal-hero__portrait img {
   width: 100%; height: 100%;
   object-fit: cover;
@@ -88,6 +88,7 @@
 .personal-intro {
   padding-block: clamp(var(--space-10), 5vw, var(--space-16));
 }
+
 .personal-intro__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -95,12 +96,14 @@
   border-top: 1px solid var(--color-divider);
   padding-top: var(--space-8);
 }
+
 .personal-intro__col p {
   color: var(--color-text-muted);
   line-height: 1.85;
   margin-bottom: var(--space-5);
   font-size: clamp(.95rem, .9rem + .25vw, 1.05rem);
 }
+
 .personal-intro__col p:last-child { margin-bottom: 0; }
 
 /* ─── PHOTO MOSAIC ────────────────────────────── */
@@ -116,18 +119,10 @@
   gap: var(--space-4);
 }
 
-/* Row layout variants */
-.mosaic-row--two-tall {
-  grid-template-columns: 1fr 1fr;
-}
-.mosaic-row--three {
-  grid-template-columns: repeat(3, 1fr);
-}
-.mosaic-row--wide-narrow {
-  grid-template-columns: 2fr 1fr;
-}
+.mosaic-row--two-tall   { grid-template-columns: 1fr 1fr; }
+.mosaic-row--three      { grid-template-columns: repeat(3, 1fr); }
+.mosaic-row--wide-narrow{ grid-template-columns: 2fr 1fr; }
 
-/* Individual mosaic items */
 .mosaic-item {
   position: relative;
   border-radius: var(--radius-xl);
@@ -137,29 +132,18 @@
   background: var(--color-surface-offset);
   transition: box-shadow var(--t-slow), transform var(--t-slow);
 }
+
 .mosaic-item:hover {
   box-shadow: var(--shadow-lg);
   transform: translateY(-3px);
 }
 
-.mosaic-item__img {
-  width: 100%;
-  overflow: hidden;
-}
+.mosaic-item__img { width: 100%; overflow: hidden; }
 
-/* Height variants */
-.mosaic-item--tall .mosaic-item__img {
-  height: clamp(340px, 42vw, 540px);
-}
-.mosaic-item--wide .mosaic-item__img {
-  height: clamp(260px, 30vw, 380px);
-}
-.mosaic-row--three .mosaic-item .mosaic-item__img {
-  height: clamp(240px, 26vw, 340px);
-}
-.mosaic-row--wide-narrow .mosaic-item:not(.mosaic-item--wide) .mosaic-item__img {
-  height: clamp(260px, 30vw, 380px);
-}
+.mosaic-item--tall .mosaic-item__img       { height: clamp(340px, 42vw, 540px); }
+.mosaic-item--wide .mosaic-item__img       { height: clamp(260px, 30vw, 380px); }
+.mosaic-row--three .mosaic-item .mosaic-item__img { height: clamp(240px, 26vw, 340px); }
+.mosaic-row--wide-narrow .mosaic-item:not(.mosaic-item--wide) .mosaic-item__img { height: clamp(260px, 30vw, 380px); }
 
 .mosaic-item__img img {
   width: 100%;
@@ -170,12 +154,12 @@
   transition: transform var(--t-slow), filter var(--t-slow);
   filter: saturate(0.92);
 }
+
 .mosaic-item:hover .mosaic-item__img img {
   transform: scale(1.04);
   filter: saturate(1.05);
 }
 
-/* Gradient overlay so caption reads on any photo */
 .mosaic-item__img::after {
   content: '';
   position: absolute;
@@ -188,7 +172,6 @@
   pointer-events: none;
 }
 
-/* Caption — overlaid on the photo */
 .mosaic-caption {
   position: absolute;
   bottom: 0; left: 0; right: 0;
@@ -198,6 +181,7 @@
   gap: var(--space-1);
   z-index: 2;
 }
+
 .mosaic-caption__tag {
   font-family: var(--font-mono);
   font-size: .6rem;
@@ -213,6 +197,7 @@
   align-self: flex-start;
   border: 1px solid color-mix(in oklab, var(--color-primary) 30%, transparent);
 }
+
 .mosaic-caption__text {
   font-family: var(--font-display);
   font-size: clamp(.9rem, .8rem + .4vw, 1.05rem);
@@ -224,9 +209,6 @@
 }
 
 /* ─── INTERESTS GRID ──────────────────────────── */
-.personal-interests {
-  /* Uses section--alt from main CSS */
-}
 .interests-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -243,6 +225,7 @@
   overflow: hidden;
   transition: box-shadow var(--t), transform var(--t), border-color var(--t);
 }
+
 .interest-card::before {
   content: '';
   position: absolute; top: 0; left: 0; right: 0; height: 1px;
@@ -250,11 +233,13 @@
   opacity: 0;
   transition: opacity var(--t-slow);
 }
+
 .interest-card:hover {
   box-shadow: var(--shadow-md);
   transform: translateY(-2px);
   border-color: color-mix(in oklab, var(--color-primary) 28%, var(--color-border));
 }
+
 .interest-card:hover::before { opacity: 1; }
 
 .interest-card__icon {
@@ -265,10 +250,9 @@
   color: var(--color-primary);
   margin-bottom: var(--space-4);
 }
-.interest-card__icon svg {
-  width: 20px; height: 20px;
-  display: block;
-}
+
+.interest-card__icon svg { width: 20px; height: 20px; display: block; }
+
 .interest-card h3 {
   font-family: var(--font-display);
   font-size: var(--text-base);
@@ -277,6 +261,7 @@
   margin-bottom: var(--space-2);
   line-height: 1.2;
 }
+
 .interest-card p {
   font-size: var(--text-sm);
   color: var(--color-text-muted);
@@ -284,9 +269,8 @@
 }
 
 /* ─── BACK LINK ───────────────────────────────── */
-.personal-back {
-  padding-block: var(--space-10) var(--space-12);
-}
+.personal-back { padding-block: var(--space-10) var(--space-12); }
+
 .personal-back__link {
   display: inline-flex;
   align-items: center;
@@ -304,6 +288,7 @@
   text-decoration: none;
   background: var(--color-surface);
 }
+
 .personal-back__link:hover {
   color: var(--color-primary);
   border-color: var(--color-primary);
@@ -312,93 +297,39 @@
 }
 
 /* ─── RESPONSIVE ──────────────────────────────── */
-@media(max-width: 1024px) {
+@media (max-width: 1024px) {
   .interests-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-@media(max-width: 900px) {
-  .personal-hero__inner {
-    grid-template-columns: 1fr;
-  }
-  .personal-hero__portrait {
-    max-width: 340px;
-    aspect-ratio: 4/3;
-    margin-inline: auto;
-  }
-  .personal-intro__grid {
-    grid-template-columns: 1fr;
-  }
-  .mosaic-row--two-tall {
-    grid-template-columns: 1fr;
-  }
-  .mosaic-row--three {
-    grid-template-columns: 1fr 1fr;
-  }
-  .mosaic-row--wide-narrow {
-    grid-template-columns: 1fr;
-  }
+@media (max-width: 900px) {
+  .personal-hero__inner { grid-template-columns: 1fr; }
+  .personal-hero__portrait { max-width: 340px; aspect-ratio: 4/3; margin-inline: auto; }
+  .personal-intro__grid { grid-template-columns: 1fr; }
+  .mosaic-row--two-tall { grid-template-columns: 1fr; }
+  .mosaic-row--three { grid-template-columns: 1fr 1fr; }
+  .mosaic-row--wide-narrow { grid-template-columns: 1fr; }
 }
 
-@media(max-width: 600px) {
-  .mosaic-row--three {
-    grid-template-columns: 1fr;
-  }
+@media (max-width: 768px) {
+  .personal-hero { padding-block: var(--space-10) var(--space-8); }
+  .personal-hero__inner { gap: var(--space-6); }
+  .personal-hero__title { font-size: clamp(2rem, 9vw, 3rem); }
+  .personal-hero__portrait { max-width: 280px; aspect-ratio: 3/4; border-radius: var(--radius-xl); }
+  .personal-intro { padding-block: var(--space-8) var(--space-10); }
+  .personal-intro__grid { grid-template-columns: 1fr; gap: var(--space-4); }
+  .personal-mosaic { gap: var(--space-3); }
+  .mosaic-row { gap: var(--space-3); }
+  .mosaic-row--three { grid-template-columns: 1fr; }
+  .mosaic-item--tall .mosaic-item__img { height: clamp(260px, 70vw, 380px); }
+  .mosaic-row--three .mosaic-item .mosaic-item__img { height: clamp(220px, 60vw, 320px); }
+  .mosaic-row--wide-narrow .mosaic-item .mosaic-item__img { height: clamp(220px, 60vw, 300px); }
+  .interests-grid { grid-template-columns: 1fr; gap: var(--space-4); }
+  .interest-card { padding: var(--space-5); }
+}
+
+@media (max-width: 480px) {
+  .personal-hero__portrait { max-width: 240px; aspect-ratio: 1/1; border-radius: 50%; }
+  .mosaic-caption__text { font-size: .85rem; }
   .interests-grid { grid-template-columns: 1fr; }
-  .mosaic-item--tall .mosaic-item__img { height: 320px; }
-  .mosaic-row--three .mosaic-item .mosaic-item__img { height: 280px; }
-}/* ─── RESPONSIVE ────────────────────────────── */
-@media(max-width:1024px){
-  .interests-grid{grid-template-columns:repeat(2,1fr);}
-}
-
-@media(max-width:900px){
-  .personal-hero__inner{grid-template-columns:1fr;}
-  .personal-hero__portrait{
-    max-width:320px;
-    aspect-ratio:4/3;
-    margin-inline:auto;
-  }
-  .personal-intro__grid{grid-template-columns:1fr;}
-  .mosaic-row--two-tall{grid-template-columns:1fr;}
-  .mosaic-row--three{grid-template-columns:1fr 1fr;}
-  .mosaic-row--wide-narrow{grid-template-columns:1fr;}
-}
-
-@media(max-width:768px){
-  /* Hero */
-  .personal-hero{padding-block:var(--space-10) var(--space-8);}
-  .personal-hero__inner{gap:var(--space-6);}
-  .personal-hero__title{font-size:clamp(2rem,9vw,3rem);}
-  .personal-hero__portrait{
-    max-width:280px;
-    aspect-ratio:3/4;
-    border-radius:var(--radius-xl);
-  }
-
-  /* Intro */
-  .personal-intro{padding-block:var(--space-8) var(--space-10);}
-  .personal-intro__grid{grid-template-columns:1fr;gap:var(--space-4);}
-
-  /* Mosaic */
-  .personal-mosaic{gap:var(--space-3);}
-  .mosaic-row{gap:var(--space-3);}
-  .mosaic-row--three{grid-template-columns:1fr;}
-  .mosaic-item--tall .mosaic-item__img{height:clamp(260px,70vw,380px);}
-  .mosaic-row--three .mosaic-item .mosaic-item__img{height:clamp(220px,60vw,320px);}
-  .mosaic-row--wide-narrow .mosaic-item .mosaic-item__img{height:clamp(220px,60vw,300px);}
-
-  /* Interests */
-  .interests-grid{grid-template-columns:1fr;gap:var(--space-4);}
-  .interest-card{padding:var(--space-5);}
-}
-
-@media(max-width:480px){
-  .personal-hero__portrait{
-    max-width:240px;
-    aspect-ratio:1/1;
-    border-radius:50%;
-  }
-  .mosaic-caption__text{font-size:.85rem;}
-  .interests-grid{grid-template-columns:1fr;}
-  .personal-back{padding-block:var(--space-8) var(--space-10);}
+  .personal-back { padding-block: var(--space-8) var(--space-10); }
 }
