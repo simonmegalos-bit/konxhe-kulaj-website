@@ -79,10 +79,12 @@ is self-hosted (check Fontshare's licence first).
   (user rQQsSL4AAAAJ) and ORCID (0000-0002-2355-2583) before editing.
 
 ## Known issues / outstanding work
-- Four visible placeholders on the live site, need real content from the owner
-  (index.html ~lines 431-433 "[Add paper title]", "[Add book title]",
-  "[Add current question]"; ~line 479 "[Add CV link here]", link is "#"; the hero CV button
-  points to #contact). If no content is supplied, hide them instead.
+- "On My Desk" (index.html, Experience section) still shows three placeholders: "[Add paper title]",
+  "[Add book title]", "[Add current question]". Owner will supply the content later; do not invent it.
+  If it must go live before then, hide the block instead.
+- CV button (hero) and CV row (Contact) are hidden in comments in index.html. The owner's CV contains
+  private details (phone, personal email, referees), so it must NOT be published or committed.
+  Only a cleaned public version may be added; then remove the comment markers and set the link.
 - Switzer still loads from Fontshare (both HTML files); needs the woff2 files from the owner.
 - Duplicate Railway service in "chic-bravery" (deletion approved, not yet done).
 - No contact email or form (a form needs a privacy review first).

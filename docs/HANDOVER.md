@@ -25,7 +25,7 @@ Plain static HTML/CSS/JS, no build step. Railway (Railpack builder) deploys from
 `main` branch of the GitHub repo. No environment variables.
 
 ## Open items, in priority order
-1. Fill the four content placeholders (see CLAUDE.md) once the owner supplies content.
+1. Fill the "On My Desk" placeholders once the owner supplies content. The CV button/row is hidden until a public CV (no private details) exists.
 2. Finish deleting the duplicate Railway service in "chic-bravery".
 3. Self-host Switzer and remove the Fontshare link (owner supplies the woff2 files).
 4. Remove dead dark-mode leftovers.
