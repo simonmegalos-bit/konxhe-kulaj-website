@@ -29,7 +29,7 @@ Plain static HTML/CSS/JS, no build step. Railway (Railpack builder) deploys from
 2. Finish deleting the duplicate Railway service in "chic-bravery".
 3. Self-host Switzer and remove the Fontshare link (owner supplies the woff2 files).
 4. Remove dead dark-mode leftovers.
-5. Add basic search/sharing basics: sitemap.xml, robots.txt, Open Graph image, favicon.
+5. (Done on 7 Oct 2026: sitemap.xml, robots.txt, Open Graph image, favicon.)
 6. Consider a contact route (email address or form; a form needs AVG/GDPR review).
 
 ## Owner-side housekeeping (tracked outside this repo)

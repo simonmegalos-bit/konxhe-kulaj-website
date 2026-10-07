@@ -13,6 +13,8 @@ plain English, small reversible steps. Background and history: docs/HANDOVER.md.
 - main.js: small script (forces light theme, mobile nav, scroll behaviour)
 - fonts/: self-hosted Cormorant Garamond + JetBrains Mono (woff2) and fonts.css
 - *.jpg / *.png: portraits and photos (already compressed)
+- robots.txt, sitemap.xml, favicon.svg, apple-touch-icon.png, og-image.png: search and link-sharing basics
+  (add new pages to sitemap.xml; og-image.png is a text-only card)
 - .claude/settings.json: allow-rule for `git push origin HEAD:main` (see Approval rules)
 Static site: no framework, no build step, no package manager, no tests.
 Nav order: About, Research, Publications, Experience, Personal (gold accent), Contact.
@@ -35,8 +37,9 @@ and the mobile nav are the most fragile parts.
 - The repo root is served as the website, so every committed file (including this
   one) may be publicly readable. Never write credentials or private details in it.
 - Duplicate unused service with the same name in Railway project "chic-bravery"
-  (no domain, no traffic). Owner approved deleting it on 7 Oct 2026; two delete
-  attempts timed out, so it still exists. Do not touch the "melodious-perception" one.
+  (no domain, no traffic). Owner approved deleting it on 7 Oct 2026. Railway's tool timed
+  out repeatedly; the deletion is queued but not applied. Do not touch the
+  "melodious-perception" one.
 
 ## Working procedure
 1. Pull latest main, create a branch.
@@ -83,6 +86,5 @@ is self-hosted (check Fontshare's licence first).
 - Switzer still loads from Fontshare (both HTML files); needs the woff2 files from the owner.
 - Duplicate Railway service in "chic-bravery" (deletion approved, not yet done).
 - No contact email or form (a form needs a privacy review first).
-- No robots.txt, sitemap.xml, favicon or social-sharing (Open Graph) image.
 - Publications and citation counts are hand-maintained and can go stale.
 - Dead dark-mode leftovers (see above).
