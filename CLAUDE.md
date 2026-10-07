@@ -86,5 +86,7 @@ is self-hosted (check Fontshare's licence first).
 - Switzer still loads from Fontshare (both HTML files); needs the woff2 files from the owner.
 - Duplicate Railway service in "chic-bravery" (deletion approved, not yet done).
 - No contact email or form (a form needs a privacy review first).
-- Publications and citation counts are hand-maintained and can go stale.
+- Publications and citation counts are hand-maintained and can go stale. Total citations set to 6,100 on 7 Oct 2026
+  at the owner's instruction (figure from Dr. Kulaj's CV). Google Scholar showed about 4,298 in a web-search summary, and the four
+  per-paper counts on the page (~103, ~3,764, ~38, ~334) still sum to 4,239. Owner to confirm the source of 6,100.
 - Dead dark-mode leftovers (see above).
