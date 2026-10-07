@@ -75,6 +75,8 @@ is self-hosted (check Fontshare's licence first).
   add a theme toggle. Leftovers (safe to remove in a cleanup): `.theme-toggle { display: none; }`
   in style.css and the data-theme="light" line in main.js.
 - Logo is an inline SVG "K" monogram in the header.
+- Never delete or rename a published image or file: visitors' browsers keep old copies of the page and would show a
+  broken picture. Replace the file under the same name and add a version tag to the link (e.g. photo.jpg?v=2).
 - Never invent content. Check publications and citation counts against Google Scholar
   (user rQQsSL4AAAAJ) and ORCID (0000-0002-2355-2583) before editing.
 
