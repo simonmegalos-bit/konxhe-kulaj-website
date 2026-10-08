@@ -77,6 +77,9 @@ is self-hosted (check Fontshare's licence first).
 - Logo is an inline SVG "K" monogram in the header.
 - Never delete or rename a published image or file: visitors' browsers keep old copies of the page and would show a
   broken picture. Replace the file under the same name and add a version tag to the link (e.g. photo.jpg?v=2).
+- Writing style: no em dashes (—) in site copy, and avoid stock AI phrasing ("at the intersection of", "unifying lens",
+  "glimpse", "whether it's A, B, or C"). Use commas, colons or full stops. En dashes stay in number ranges and
+  scientific pairs (2018 – 2024, CD31–CD38). Page titles use a pipe: "Name | Description".
 - Never invent content. Check publications and citation counts against Google Scholar
   (user rQQsSL4AAAAJ) and ORCID (0000-0002-2355-2583) before editing.
 
